@@ -9,3 +9,12 @@
 -- DROP COLUMN specialty
 -- ALTER TABLE profiles
 -- DROP COLUMN isLicensed
+
+-- CREATE TABLE jobs(
+--    id INT NOT NULL AUTO_INCREMENT,
+--     jobtitle VARCHAR(255) NOT NULL,
+--     company VARCHAR(255) NOT NULL,
+--     pay INT NOT NULL,
+--     benefits TINYINT NOT NULL,
+--     PRIMARY KEY (id)
+-- )
