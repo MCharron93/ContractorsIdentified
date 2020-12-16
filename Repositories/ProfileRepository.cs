@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using ContractorsIdentified.Models;
+using Dapper;
 
 namespace ContractorsIdentified.Repositories
 {
@@ -13,14 +14,21 @@ namespace ContractorsIdentified.Repositories
       _db = db;
     }
 
-    internal Profile GetByEmail(object email)
+    public Profile GetByEmail(string email)
     {
-      throw new NotImplementedException();
+      string sql = "SELECT * FROM profiles WHERE email = @Email";
+      return _db.QueryFirstOrDefault<Profile>(sql, new { email });
     }
 
-    internal Profile CreateProfile(Profile userInfo)
+    public Profile CreateProfile(Profile userInfo)
     {
-      throw new NotImplementedException();
+      string sql = @"
+      INSERT INTO profiles
+      (name, email, id)
+      VALUES
+      (@Name, @Email, @Id);";
+      _db.Execute(sql, userInfo);
+      return userInfo;
     }
   }
 }

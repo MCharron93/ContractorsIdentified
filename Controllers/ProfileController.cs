@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ContractorsIdentified.Controllers
 {
   [ApiController]
-  [Route("profile")]
+  [Route("[controller]")]
 
   public class ProfileController : ControllerBase
   {
