@@ -67,6 +67,8 @@ namespace ContractorsIdentified
       services.AddScoped<IDbConnection>(x => CreateDbConnection());
       services.AddTransient<ProfileService>();
       services.AddTransient<ProfileRepository>();
+      services.AddTransient<ContractorService>();
+      services.AddTransient<ContractorRepository>();
 
     }
     private IDbConnection CreateDbConnection()
